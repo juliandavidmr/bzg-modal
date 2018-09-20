@@ -4,7 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --output-hashing=none --extractCss=false",
+    "package": "cat dist/modal-custom-element/{runtime,polyfills,styles,scripts,main}.js > dist/modal-custom-element/bz-modal.js",
+    "dist": "npm run build && npm run package",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -21,10 +23,11 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
+    "@webcomponents/custom-elements": "^1.2.0",
     "core-js": "^2.5.4",
+    "document-register-element": "^1.7.2",
     "rxjs": "~6.2.0",
-    "zone.js": "~0.8.26",
-    "document-register-element": "^1.7.2"
+    "zone.js": "~0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.8.0",

@@ -8,6 +8,9 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
-
+if (customElements.get('bz-modal')) {
+  console.error('bz-modal component already defined -> nothing to do...')
+} else {
+  platformBrowserDynamic().bootstrapModule(AppModule)
+    .catch(err => console.error(err));
+}
