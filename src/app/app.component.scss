@@ -1,4 +1,4 @@
-// --------------------- Fonts
+// ------------------------- Fonts
 
 @font-face {
   font-family: "Open Sans";
@@ -15,6 +15,11 @@
 }
 
 // ------------------------ Variables
+$WIDTH_SMALL: 308px;
+$WIDTH_MEDIUM: 524px;
+$WIDTH_LARGE: 740px;
+$WIDTH_EXTRA_LARGE: 956px;
+
 
 html {
   -ms-text-size-adjust: 100%;
@@ -186,23 +191,25 @@ body {
   border-radius: 8px;
   box-shadow: -9px 11px 100px -7px #a6a6a6;
   position: relative;
-  width: 524px;
+  width: $WIDTH_MEDIUM; // width default
+  max-width: $WIDTH_EXTRA_LARGE;
+  border: 1px solid #eaeaea;
 }
 
 .bz-modal--s .bz-modal__container {
-  width: 308px;
+  width: $WIDTH_SMALL;
 }
 
 .bz-modal--m .bz-modal__container {
-  width: 524px;
+  width: $WIDTH_MEDIUM;
 }
 
 .bz-modal--l .bz-modal__container {
-  width: 740px;
+  width: $WIDTH_LARGE;
 }
 
 .bz-modal--xl .bz-modal__container {
-  width: 956px;
+  width: $WIDTH_EXTRA_LARGE;
 }
 
 .bz-modal__close {
