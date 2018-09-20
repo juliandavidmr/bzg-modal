@@ -7,8 +7,12 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "bz",
-      "schematics": {},
+      "prefix": "bzg",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -25,7 +29,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [              
+            "scripts": [
               {
                 "input": "node_modules/document-register-element/build/document-register-element.js"
               }
@@ -127,5 +131,10 @@
       }
     }
   },
-  "defaultProject": "modal-custom-element"
+  "defaultProject": "modal-custom-element",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
