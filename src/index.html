@@ -7,10 +7,17 @@
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">  
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
 <body>
+  <p>
+    Development server
+    Run ng serve for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change
+    any of the source files.
+    Run ng generate component component-name to generate a new component. You can also use ng generate
+    directive|pipe|service|class|guard|interface|enum|module.
+  </p>
   <bzg-modal>
     <p>Contenido</p>
   </bzg-modal>
@@ -18,12 +25,14 @@
   <script>
     var modal = document.querySelector('bzg-modal');
     modal.setAttribute('active', true);
-    modal.setAttribute('title', 'Titulo');
-    modal.setAttribute('accept-button-text', 'Ok');
-    
+    modal.setAttribute('title', 'Title');
+    modal.setAttribute('accept-text', 'Continue');
+    modal.setAttribute('cancel-text', 'Cancel');
+
     modal.addEventListener('close', (data) => {
       console.log('Ventana cerrada', data);
     });
+
   </script>
 </body>
 

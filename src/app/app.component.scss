@@ -1,3 +1,5 @@
+// --------------------- Fonts
+
 @font-face {
   font-family: "Open Sans";
   font-style: italic;
@@ -12,7 +14,7 @@
   src: url(../assets/fonts/open-sans-semibold.ttf) format("truetype")
 }
 
-/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+// ------------------------ Variables
 
 html {
   -ms-text-size-adjust: 100%;
@@ -20,23 +22,7 @@ html {
 }
 
 * {
-	font-family: "Open Sans", Arial, Helvetica, sans-serif;
-}
-
-article,
-aside,
-footer,
-header,
-nav,
-section,
-figcaption,
-figure,
-main {
-  display: block;
-}
-
-figure {
-  margin: 1em 40px;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
 
 svg:not(:root) {
@@ -147,66 +133,6 @@ body {
 
 .bz-border-radius--l {
   border-radius: 8px;
-}
-
-.bz-btn {
-  border: 1px solid transparent;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1.4rem;
-  padding: 0 2.4rem;
-  text-align: center;
-  white-space: nowrap;
-
-  &[disabled] {
-    background-color: #e6e8eb;
-    border-color: transparent;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    color: #05131e;
-    cursor: auto;
-  }
-}
-
-.bz-btn--primary {
-  background-color: #607180;
-  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.06), 0 2px 2px rgba(0, 0, 0, 0.12);
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.06), 0 2px 2px rgba(0, 0, 0, 0.12);
-  color: #fff;
-
-  &:hover:not([disabled]),
-  &:active:not([disabled]) {
-    background-color: #05131e;
-  }
-}
-
-.bz-btn--secondary {
-  background-color: #fff;
-  border-color: #607180;
-  color: #607180;
-
-  &:hover:not([disabled]),
-  &:active:not([disabled]) {
-    background-color: #f2f2f2;
-  }
-}
-
-.bz-btn--warning {
-  background-color: #ffc107;
-  color: #fff;
-
-  &:hover:not([disabled]) {
-    background-color: #edb100;
-  }
-}
-
-.bz-btn--danger {
-  background-color: #f82b60;
-  color: #fff;
-
-  &:hover:not([disabled]) {
-    background-color: #f7124d;
-  }
 }
 
 .bz-btn--s {
@@ -327,11 +253,6 @@ body {
   padding: 1.6rem;
   height: 40px;
   margin: 0;
-
-  .bz-btn--secondary {
-    background-color: #f6f6f6;
-    color: #05131e;
-  }
 }
 
 .bz-modal--error .bz-modal__footer .bz-btn--secondary,
@@ -339,20 +260,40 @@ body {
   background-color: #f6f6f6;
 }
 
-.bz-modal__button {
-  background-color: #05131e;
+
+.bz-modal__button {  
   border: 1px solid transparent;
   border-radius: 4px;
-  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.06), 0 2px 2px rgba(0, 0, 0, 0.12);
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.06), 0 2px 2px rgba(0, 0, 0, 0.12);
   color: #fff;
   cursor: pointer;
-  font-size: 1.4rem;
-  margin-left: 1.6rem;
+  font-size: 15px;
   white-space: nowrap;
+  font-weight: 400;
+  font-style: normal;
+  min-width: 90px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 0 2.4rem;
+  text-align: center;
 
-  &:first-child {
-    margin-left: 0;
+  &[disabled] {
+    background-color: #e6e8eb;
+    border-color: transparent;
+    box-shadow: none;
+    color: #05131e;
+    cursor: auto;
+  }
+
+  &_cancel {
+	background-color: #f6f6f6;
+	color: #05131e;
+	box-shadow: none;
+	border: 1px solid #476171;
+  }
+
+  &_accept {
+    background-color: #476171;
   }
 }
 
