@@ -11,14 +11,15 @@
 </head>
 
 <body>
-  <bz-modal>
+  <bzg-modal>
     <p>Contenido</p>
-  </bz-modal>
+  </bzg-modal>
 
   <script>
-    const modal = document.querySelector('bz-modal');
+    var modal = document.querySelector('bzg-modal');
     modal.setAttribute('active', true);
     modal.setAttribute('title', 'Titulo');
+    modal.setAttribute('accept-button-text', 'Ok');
     
     modal.addEventListener('close', (data) => {
       console.log('Ventana cerrada', data);

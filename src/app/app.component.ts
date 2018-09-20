@@ -1,27 +1,37 @@
 import { Component, Input, Output, EventEmitter, ViewEncapsulation, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'bz-modal',
+  selector: 'bzg-modal',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
   encapsulation: ViewEncapsulation.Native
 })
 export class AppComponent implements OnInit {
 
-  @Input() active: boolean = true
-  @Input() title: string
-  @Input() acceptButtonText: string
+  private _active: boolean;
 
-  @Output() close = new EventEmitter<boolean>()
+  @Input() set active (val: boolean | string) {
+    this._active = typeof val === 'string' ? val.toLowerCase().includes('true') : val;
+  }
+
+  get active () {
+    return this._active;
+  }
+
+  @Input() title: string;
+  @Input() acceptButtonText: string;
+
+  @Output() close = new EventEmitter<boolean>();
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.title)
-    console.log(this.acceptButtonText)
+    console.log(this.active);
+    console.log(this.title);
+    console.log(this.acceptButtonText);
   }
 
   public onClose() {
-    this.close.emit(true)
+    this.close.emit(true);
   }
 }
