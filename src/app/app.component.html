@@ -7,17 +7,17 @@
         </svg>
       </i>
     </div>
-    <div class="bz-modal__header">
+    <div *ngIf="header" class="bz-modal__header">
       {{ title }}
     </div>
     <div class="bz-modal__body">
       <ng-content></ng-content>
     </div>
     <div class="bz-modal__footer">
-      <button *ngIf="acceptText" class="bz-modal__button bz-modal__button_accept bz-btn">
+      <button *ngIf="acceptText" (click)="onAccept()" class="bz-modal__button bz-modal__button_accept bz-btn">
         <span>{{ acceptText }}</span>
       </button>
-      <button *ngIf="cancelText" class="bz-modal__button bz-modal__button_cancel bz-btn">
+      <button *ngIf="cancelText" (click)="onCancel()" class="bz-modal__button bz-modal__button_cancel bz-btn">
         <span>{{ cancelText }}</span>
       </button>
     </div>

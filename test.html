@@ -18,7 +18,8 @@
         
         modal.addEventListener('close', (data) => {
           console.log('Ventana cerrada', data);
-        });
+          modal.setAttribute('active', false);
+        }, this);
     </script>
 </body>
 </html>

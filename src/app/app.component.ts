@@ -7,7 +7,7 @@ import { IAppComponent, TYPE_MODAL } from './IAppComponent';
   styleUrls: ['./app.component.scss'],
   encapsulation: ViewEncapsulation.Native
 })
-export class AppComponent implements OnInit, IAppComponent {
+export class AppComponent implements IAppComponent {
 
   //#region Inputs
   //#region active
@@ -26,22 +26,27 @@ export class AppComponent implements OnInit, IAppComponent {
   @Input() acceptText: string;
   @Input() cancelText: string;
   @Input() type = TYPE_MODAL.ACTIONAL;
+  @Input() header = true;
   //#endregion
 
   //#region Events
   @Output() close = new EventEmitter<boolean>();
+  @Output() accept = new EventEmitter<boolean>();
+  @Output() cancel = new EventEmitter<boolean>();
   //#endregion
 
   constructor() { }
 
-  ngOnInit(): void {
-    console.log(this.active);
-    console.log(this.title);
-    console.log(this.acceptText);
-    console.log(this.cancelText);
-  }
-
   public onClose(): void {
     this.close.emit(true);
+    this.active = false;
+  }
+
+  onAccept(): void {
+    this.accept.emit(true);
+  }
+
+  onCancel(): void {
+    this.cancel.emit(true);
   }
 }

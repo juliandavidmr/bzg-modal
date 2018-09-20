@@ -31,6 +31,15 @@
 
     modal.addEventListener('close', (data) => {
       console.log('Ventana cerrada', data);
+      modal.setAttribute('active', false);
+    });
+
+    modal.addEventListener('cancel', (data) => {
+      console.log('Click cancel', data);
+    });
+
+    modal.addEventListener('accept', (data) => {
+      console.log('Click accept', data);
     });
 
   </script>
